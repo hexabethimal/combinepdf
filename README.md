@@ -14,4 +14,3 @@ This python script creates a GUI that permits users to:
 - Combines files in alphabetical order
 - Files that are not '.pdf' are automatically excluded from the PDF combining process and do not need to be manually sorted from the source folder
 - Does not work with password protected PDFs
-- Recommend using [pyinstaller](https://github.com/pyinstaller/pyinstaller) to create a single executable file
