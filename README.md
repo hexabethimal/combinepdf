@@ -1,5 +1,5 @@
 # combinepdf
-Basic utility for combining many PDFs into one
+Simple utility for combining many PDFs into one
 
 ![Image of combinepdf UI](/combinepdf1.png)
 
