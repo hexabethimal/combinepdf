@@ -6,7 +6,6 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
-from PIL import Image, ImageTk
 
 folderWithPDFs = ""
 destinationFolder = ""
@@ -67,9 +66,6 @@ window.title("Combine PDFs")
 window.geometry("450x390")
 window.resizable(False, False)
 window.configure(bg="#AD9A9D")
-ico = Image.open("C:\\Program Files (x86)\\Cybernize Extras\\Combine PDFs\\file-pdf-black.png")
-photo = ImageTk.PhotoImage(ico)
-window.wm_iconphoto(False, photo)
 style = ttk.Style(window)
 style.configure("TButton", font=('wasy10', 14))
 var1 = tk.IntVar()
