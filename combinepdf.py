@@ -15,13 +15,17 @@ def select_source_folder():
     x = fd.askdirectory()  
     entry1.delete(0, tk.END)
     entry1.insert(0, x)     
-    entry1.configure(state="readonly")
+    
+    if entry1.get() != "":
+        entry1.configure(state="readonly")
 
 def select_destination_folder():
     x = fd.askdirectory()   
     entry2.delete(0, tk.END)
     entry2.insert(0, x)  
-    entry2.configure(state="readonly")
+    
+    if entry2.get() != "":
+        entry2.configure(state="readonly")
     
 def startCheck(): 
     folderWithPDFs = entry1.get()
