@@ -40,11 +40,13 @@ def mergePDFs(folderWithPDFs, destinationFolder, newPDFname):
     fileDir = folderWithPDFs + "/"            
     newList = [fileDir + x for x in filesList]
     merger = PdfWriter()
+    createdFiles = []
     
     if var1.get() == 1:
         for pdf in newList:          
             if ".docx" in pdf:
                     convert(pdf)  
+                    createdFiles.append(pdf.replace(".docx", ".pdf")) 
         filesList = os.listdir(folderWithPDFs)
         newList = [fileDir + x for x in filesList]
     
@@ -60,6 +62,13 @@ def mergePDFs(folderWithPDFs, destinationFolder, newPDFname):
         merger.close()
     except:
         showinfo("Unable to combine. 1 or more PDFs may be password protected.")
+
+    if var1.get() == 1:
+        for x in range(len(createdFiles)):                            
+            try:
+                os.remove(createdFiles[x])
+            except OSError:
+                pass
 
 window = tk.Tk()
 window.title("Combine PDFs")
