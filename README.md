@@ -13,4 +13,5 @@ This python script creates a GUI that permits users to:
 ### Notes
 - Combines files in alphabetical order
 - Files that are not '.pdf' are automatically excluded from the PDF combining process and do not need to be manually sorted from the source folder
+- Automatically removes '.docx' files converted to '.pdf' after combining
 - Does not work with password protected PDFs
