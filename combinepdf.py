@@ -65,7 +65,7 @@ def mergePDFs(folderWithPDFs, destinationFolder, newPDFname):
         merger.write(destinationFolder + "/" + newPDFname + ".pdf")
         merger.close()
     except:
-        showinfo("Unable to combine. 1 or more PDFs may be password protected.")
+        showinfo("Error", "Unable to combine. 1 or more PDFs may be password protected.")
 
     if var1.get() == 1:
         for x in range(len(createdFiles)):                            
