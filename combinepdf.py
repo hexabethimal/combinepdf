@@ -11,21 +11,13 @@ folderWithPDFs = ""
 destinationFolder = ""
 newPDFname = ""
          
-def select_source_folder():
+def select_folder(entry):
     x = fd.askdirectory()  
-    entry1.delete(0, tk.END)
-    entry1.insert(0, x)     
+    entry.delete(0, tk.END)
+    entry.insert(0, x)     
     
-    if entry1.get() != "":
-        entry1.configure(state="readonly")
-
-def select_destination_folder():
-    x = fd.askdirectory()   
-    entry2.delete(0, tk.END)
-    entry2.insert(0, x)  
-    
-    if entry2.get() != "":
-        entry2.configure(state="readonly")
+    if entry.get() != "":
+        entry.configure(state="readonly")
     
 def startCheck(): 
     folderWithPDFs = entry1.get()
@@ -82,11 +74,11 @@ window.configure(bg="#AD9A9D")
 style = ttk.Style(window)
 style.configure("TButton", font=('wasy10', 14))
 var1 = tk.IntVar()
-getSourceFolder_button = ttk.Button(window, text="Select Source Folder", command=select_source_folder, style="TButton")
+getSourceFolder_button = ttk.Button(window, text="Select Source Folder", command=lambda:select_folder(entry1), style="TButton")
 getSourceFolder_button.pack(pady=(15,0))     
 entry1 = tk.Entry(font=('wasy10', 12))
 entry1.pack(ipadx=90, ipady=5, pady=15)
-getDestFolder_button = ttk.Button(window, text="Select Destination Folder", command=select_destination_folder, style="TButton")
+getDestFolder_button = ttk.Button(window, text="Select Destination Folder", command=lambda:select_folder(entry2), style="TButton")
 getDestFolder_button.pack()     
 entry2 = tk.Entry(font=('wasy10', 12))
 entry2.pack(ipadx=90, ipady=5, pady=15)
